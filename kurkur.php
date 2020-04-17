@@ -46,30 +46,6 @@ function change(){
         }else{
         echo "\n".color("red","-] Message: ".$message);
         gocar:
-        echo "\n".color("yellow","!] YO BISA LAHHH A");
-        echo "\n".color("yellow","!] SABAR YA KURRR");
-        for($a=1;$a<=3;$a++){
-        echo color("yellow",".");
-        sleep(20);
-        }
-        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420A"}');
-        $message = fetch_value($code1,'"message":"','"');
-        if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
-        echo "\n".color("green","+] Message: ".$message);
-        goto gofood;
-        }else{
-        echo "\n".color("red","-] Message: ".$message);
-        reff:
-        $data = '{"referral_code":"G-75SR565"}';    
-        $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
-        $message = fetch_value($claim,'"message":"','"');
-        if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
-        echo "\n".color("green","+] Message: ".$message);
-        goto gofood;
-        }else{
-        echo "\n".color("red","-] Message: ".$message);
-        }
-        gofood:
         echo "\n".color("yellow","!] Claim YANG KE DUA NYA INI");
         echo "\n".color("yellow","!] TUNGGU LAGI OIIIII");
         for($a=1;$a<=3;$a++){
@@ -77,6 +53,18 @@ function change(){
         sleep(3);
         }
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420B"}');
+        $message = fetch_value($code1,'"message":"','"');
+        if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
+        echo "\n".color("green","+] Message: ".$message);
+        sleep(1);
+        sleep(3);
+	echo "\n".color("yellow","!] Claim LAGII YANG INIII");
+        echo "\n".color("yellow","!] TUNGGU LAGI OIIIII");
+        for($a=1;$a<=3;$a++){
+        echo color("yellow",".");
+        sleep(3);
+        }
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"COBAGOFOOD160420A"}');
         $message = fetch_value($code1,'"message":"','"');
         if(strpos($code1, 'Promo kamu sudah bisa dipakai')){
         echo "\n".color("green","+] Message: ".$message);
